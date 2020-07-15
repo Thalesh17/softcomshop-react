@@ -5,7 +5,12 @@ import { useAuth } from "../../../contexts/auth";
 import { Link } from "react-router-dom";
 
 export default () => {
-  const { user } = useAuth();
+  const { user, signOut } = useAuth();
+
+  function handleLogOut() {
+    signOut();
+  }
+
   return (
     <Navbar bg="light" expand="lg">
     <Navbar.Brand href="/">{user.name}</Navbar.Brand>
@@ -20,7 +25,7 @@ export default () => {
       <Navbar.Text className="mr-sm-2">
         Logado com: <a href="#login">{user.name}</a>
       </Navbar.Text>
-      <Button variant="outline-info">Deslogar</Button>
+      <Button onClick={handleLogOut} variant="outline-info">Deslogar</Button>
     </Navbar.Collapse>
   </Navbar>
   );

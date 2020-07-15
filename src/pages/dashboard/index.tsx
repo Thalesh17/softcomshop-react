@@ -14,7 +14,6 @@ const Dashboard: React.FC = () => {
     <div>
       <NavBar />
       <h1>Olá, {user?.name}</h1>
-      <button onClick={handleSignOut}>Sign Out</button>
     </div>
   )
 }

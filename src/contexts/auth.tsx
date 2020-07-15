@@ -41,7 +41,7 @@ const AuthProvider: React.FC = ({children}) => {
     setUser(response.user);
 
     api.defaults.headers['Authorization'] = `Bearer ${response.token}`;
-    history.push("/home");
+    history.push("/");
 
     localStorage.setItem("@SoftcomShop:user", JSON.stringify(response.user));
     localStorage.setItem("@SoftcomShop:token", response.token);
